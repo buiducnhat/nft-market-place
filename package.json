@@ -30,6 +30,7 @@
     "@openzeppelin/contracts": "^5.0.2"
   },
   "scripts": {
-    "deploy:contracts:all": "hardhat ignition deploy --parameters ./ignition/parameters.json ./ignition/modules/MarketPlace.ts"
+    "deploy:contracts:all": "hardhat ignition deploy --parameters ./ignition/parameters.json ./ignition/modules/MarketPlace.ts",
+    "build:all": "./build-all.sh"
   }
 }
