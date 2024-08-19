@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import NavBar from "./components/NavBar.vue";
+import LoadingScreen from "@/components/LoadingScreen.vue";
 import { useAppThemeStore } from "@/stores/app-theme.store";
 import { useWeb3Store } from "@/stores/web3.store";
 import { onMounted } from "vue";
@@ -14,7 +15,9 @@ onMounted(async () => {
 </script>
 
 <template>
+  <LoadingScreen v-if="!appThemeStore.theme" />
   <div
+    v-else
     class="h-screen bg-cover bg-center"
     :style="{
       backgroundImage: `url('/images/gradient-bg-${appThemeStore.theme}.jpg')`,

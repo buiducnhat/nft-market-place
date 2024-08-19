@@ -60,7 +60,7 @@ onMounted(async () => {
   </div>
 
   <div
-  class="grid w-full gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6"
+    class="grid w-full gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6"
   >
     <MarketItemCard
       v-for="item in listingMarketItemsWithMetadata"

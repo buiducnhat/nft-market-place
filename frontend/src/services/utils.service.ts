@@ -1,7 +1,6 @@
 import type { TNFTMetadata } from "@/types/market-item.type";
 import type { ContractTransactionResponse } from "ethers";
 
-// biome-ignore lint/complexity/noStaticOnlyClass: <explanation>
 class UtilsService {
   static ipfsToHttp(ipfsUrl: string): string {
     return `https://${import.meta.env.VITE_PINATA_GATEWAY}/ipfs/${ipfsUrl.replace("ipfs://", "")}`;

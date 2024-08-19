@@ -16,7 +16,16 @@ export const useAppThemeStore = defineStore("app-theme", () => {
   };
 
   const loadTheme = () => {
-    const savedTheme = localStorage.getItem("theme") as TAppTheme | "light";
+    let savedTheme = localStorage.getItem("theme") as TAppTheme;
+    if (!savedTheme) {
+      const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+      if (darkThemeMq.matches) {
+        savedTheme = "dark";
+      } else {
+        savedTheme = "light";
+      }
+    }
+
     document.documentElement.setAttribute("data-theme", savedTheme);
 
     theme.value = savedTheme;
